@@ -5,9 +5,9 @@ FROM python:3.7-slim-buster
 WORKDIR /usr/src/app
 
 # install python dependencies
-RUN pip install --upgrade pip
 COPY ./requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip \
+    && pip install -r requirements.txt
 
 # add app
 COPY . .
